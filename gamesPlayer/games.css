@@ -14,9 +14,50 @@
 }
 .card{
     width: 80%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 30px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 
+}
+.card>div>img{
+    width: 80%;
+}
+.vases{
+    width: 20%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#cont{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+
+#button-cont{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ #button-cont > #button-wrapper > button{
+    font-size: 20px;
+    font-weight:400;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+    border: none;
+   
+ }
+ #button-cont > #button-wrapper > button:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+ }
+ .active{
+    background-color: #009B5D;
+    color: white;
 }

@@ -1,0 +1,51 @@
+form{
+    width: 30%;
+    border: 2px solid black;
+    margin: auto;
+    padding: 80px;
+    font-size: 23px;
+    font-weight: bold;
+    background-color: rgb(226, 221, 116);
+    font-family: sans-serif;
+    
+}
+form input{
+    width: 70%;
+    padding: 7px;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+select{
+    font-size: 19px;
+    padding: 7px;
+    margin-bottom: 10px;
+}#form{
+    width: 90%;
+    margin: auto;
+}
+#sub{
+    display: block;
+    background-color:orange;
+    color: white;
+    width: 150px;
+    margin: auto;
+    border: none;
+    font-size: 19px;
+    font-weight: bold;
+}#age{
+    margin-left: 20px;
+}
+#city{
+  margin-left: 50px;
+}
+#nav{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: space-around;
+}
+#nav>a{
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}

@@ -1,22 +1,45 @@
 
 let container=document.getElementById("player")
 let API="https://www.balldontlie.io/api/v1/players"
-let btn1=document.getElementById("btn1")
-let btn2=document.getElementById("btn2")
-let btn3=document.getElementById("btn3")
-let btn4=document.getElementById("btn4")
+
 let inp=document.getElementById("search")
 let search=document.getElementById("sear")
 let alldata=[]
+let buttonWrapper=document.getElementById("button-wrapper")
+
+
+// API.searchParams.append('completed', false);
+// API.searchParams.append('page', 1);
+// API.searchParams.append('limit', 10);
+
+function pagination(data,pageNo,limit){
+    return data.slice((pageNo-1)*limit,(pageNo*limit-1)+1)
+}
+
 
 fetch(API)
 .then((res)=>{
     return res.json()
+
+    
 })
 .then((data)=>{
     console.log(data.data);
     alldata=data.data
     display(data.data)
+
+    let limit=6
+    let total=(data.data.length)
+    let totalBtn=Math.ceil(total/limit)
+
+    buttonWrapper.innerHTML=null
+    for(let i=1; i<=totalBtn; i++){
+      
+        buttonWrapper.append(createBtn(i))
+    }
+    let resAray=pagination(data.data,1,limit)
+    display(resAray)
+    
 })
 .catch((err)=>{
     console.log(err);
@@ -73,8 +96,35 @@ function display(arr){
 
     });
 }
-btn1.addEventListener("click",()=>{
-    for(let i=0; i<6; i++){
-        display(arr)
+
+
+function createBtn(i){
+    let btn = document.createElement("button");
+
+    let activeClass = '';
+    if(i==1){
+        activeClass = 'active';
     }
-})
+    btn.className = `.pagination-button ${activeClass}`;
+    btn.innerText = i;
+    return btn;
+}
+
+setTimeout(async function(){
+    const btns = document.querySelectorAll("#button-wrapper button");
+    let res = await fetch(API);
+    let data = await res.json();
+    let limit = 6;
+
+    btns.forEach((btn) => {
+        btn.addEventListener("click",function(){
+            btns.forEach(btnb=> btnb.classList.remove('active'));
+            btn.classList.add("active")
+            let i = btn.innerText;
+            let resAray = pagination(data.data, i, limit);
+            display(resAray);
+        })
+    })
+},500)
+
+

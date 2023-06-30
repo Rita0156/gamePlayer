@@ -32,3 +32,26 @@
     color: white;
     cursor: pointer;
 }
+#button-cont{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ #button-cont > #button-wrapper > button{
+    font-size: 20px;
+    font-weight:400;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+    border: none;
+   
+ }
+ #button-cont > #button-wrapper > button:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+ }
+ .active{
+    background-color: #009B5D;
+    color: white;
+}
