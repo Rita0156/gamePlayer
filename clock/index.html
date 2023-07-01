@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Clock</title>
+</head>
+<body>
+    <div>
+        <h1 id="min"></h1>
+        <h1 id="sec"></h1>
+    </div>
+</body>
+</html>
+<script>
+    let min=document.getElementById("min")
+    let sec=document.getElementById("sec")
+
+   let M=2
+   let S=59  
+
+   min.innerText=M
+   sec.innerText=S
+  
+
+ let data= setInterval(()=>{
+       
+    if(S==0){
+        M--
+        S=59
+    }
+    
+  if(M==0 && S==0){
+    clearInterval(data)
+  }
+    
+    
+
+    min.innerText=M
+    sec.innerText=S
+    S--
+
+  },1000)
+
+</script>

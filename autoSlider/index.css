@@ -1,0 +1,7 @@
+#images{
+    width: 50%;
+    margin: auto;
+}
+#images>img{
+    width: 100%;
+}

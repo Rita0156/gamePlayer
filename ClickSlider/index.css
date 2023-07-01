@@ -1,0 +1,21 @@
+#container{
+    width: 30%;
+    margin: auto;
+    margin-top: 200px;
+}
+#container>img{
+   width: 100%;
+}
+#btn{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}#btn>button{
+    background-color: aqua;
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
